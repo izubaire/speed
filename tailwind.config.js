@@ -13,6 +13,8 @@ module.exports = {
        inset:{
          '7': '7rem',
          '105': '128%',
+         '110': '110%',
+         '112': '112%',
          '46': '46%'
        },
       fontSize: {
@@ -26,6 +28,7 @@ module.exports = {
         '74': '19rem',
         '88': '34rem',
         '81': '27rem',
+        '25': '25rem',
         '82': '21rem',
         '89': '35rem',
         '86': '32rem',
@@ -50,9 +53,18 @@ module.exports = {
       },
       maxWidth: {
         'headerWrapper': '150rem',
-        'xxl': '115rem'
+        'xxl': '115rem',
+        '80%': '80%'
       }
     },
+
+    screens:{
+      'sm': '485px',
+      'md':	'768px',
+      'lg':	'1024px',
+      'xl':	'1280px',
+      '2xl':	'1536px'
+    }
   },
   variants: {
     extend: {},

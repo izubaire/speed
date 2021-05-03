@@ -11,7 +11,7 @@
     @apply w-14 h-14 flex justify-center items-center rounded-full text-white text-3xl cursor-pointer;
   }
   .label__style {
-    @apply text-xl text-gray-500 font-normal select-none;
+    @apply sm:text-xl text-lg text-gray-500 font-normal select-none;
   }
   .input__style {
     @apply normal-case w-full p-4 rounded-lg overflow-hidden border border-solid border-gray-300 focus:border-indigo-400 focus:shadow-lg mt-2 text-lg text-gray-600;
@@ -47,17 +47,13 @@ body {
   background-color: #f1f1f1;
 }
 
-.leftSideBar {
-  overflow-y: scroll;
-}
-
 /* Hide scrollbar for Chrome, Safari and Opera */
-.leftSideBar::-webkit-scrollbar {
+.hideScrollBar::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.leftSideBar {
+.hideScrollBar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -375,8 +371,16 @@ body {
   right: 0;
 }
 
-.friendList {
+.trans {
   transition: all 0.3s ease;
+}
+
+.module__show {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.module__hide {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
 .friendList__show {
@@ -387,6 +391,10 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
+.noModule {
+  clip-path: none;
+}
+
 .msg {
   z-index: 99999999999999999;
 }
@@ -395,11 +403,29 @@ body {
   animation: shrinking 2s linear forwards;
 }
 
+.leftShow {
+  left: 0;
+}
+
+.rightShow {
+  right: 0;
+}
+
 @keyframes shrinking {
   from {
     width: 100%;
   }
   to {
     width: 0;
+  }
+}
+
+@media (min-width: 485px) {
+  .module__show {
+    clip-path: none;
+  }
+
+  .module__hide {
+    clip-path: none;
   }
 }
